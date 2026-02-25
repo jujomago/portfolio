@@ -1,3 +1,4 @@
+import React from 'react'; // Added to fix React.Fragment error
 import { useLanguage } from '../context/LanguageContext';
 import { timelineData } from '../data/portfolio';
 
@@ -19,7 +20,7 @@ const Timeline = () => {
             const isLeft = index % 2 === 0;
 
             return (
-              <>
+              <React.Fragment key={item.id}> {/* Added unique key prop */}
                 {/* Columna izquierda */}
                 <div
                   className={`timeline-item ${isLeft ? 'left' : 'empty'}`}
@@ -54,7 +55,7 @@ const Timeline = () => {
                     </>
                   )}
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
         </div>
