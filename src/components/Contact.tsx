@@ -30,8 +30,8 @@ const Contact = () => {
     <section id="contact" className={styles.contact}>
       <div className={styles.contactInner}>
         <div className={styles.contactInfo}>
-          <span className={styles.sectionTag} data-animate="section-element">{t('contact.tag')}</span>
-          <h2 className={styles.sectionTitle} data-animate="section-element">{t('contact.title')}</h2>
+          <span className="sectionTag" data-animate="section-element">{t('contact.tag')}</span>
+          <h2 className="sectionTitle" data-animate="section-element">{t('contact.title')}</h2>
 
           <p className={styles.contactText} data-animate="section-element">
             {t('contact.text')}

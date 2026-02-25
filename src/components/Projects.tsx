@@ -11,8 +11,8 @@ const Projects = () => {
     <section id="projects" className={styles.projects}>
       <div className={styles.projectsInner}>
         <div className={styles.projectsHeader}>
-          <span className={styles.sectionTag} data-animate="section-element">{t('projects.tag')}</span>
-          <h2 className={styles.sectionTitle} data-animate="section-element">{t('projects.title')}</h2>
+          <span className="sectionTag" data-animate="section-element">{t('projects.tag')}</span>
+          <h2 className="sectionTitle" data-animate="section-element">{t('projects.title')}</h2>
         </div>
 
         <div className={styles.projectsGrid} ref={projectsRef}>

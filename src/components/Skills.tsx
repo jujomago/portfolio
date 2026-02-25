@@ -11,8 +11,8 @@ const Skills = () => {
     <section id="skills" className={styles.skills}>
       <div className={styles.skillsInner}>
         <div className={styles.skillsHeader}>
-          <span className={styles.sectionTag} data-animate="section-element">{t('skills.tag')}</span>
-          <h2 className={styles.sectionTitle} data-animate="section-element">{t('skills.title')}</h2>
+          <span className="sectionTag" data-animate="section-element">{t('skills.tag')}</span>
+          <h2 className="sectionTitle" data-animate="section-element">{t('skills.title')}</h2>
         </div>
 
         <div className={styles.skillsGrid} ref={skillsRef}>

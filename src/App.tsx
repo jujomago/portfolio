@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+  import { useEffect } from 'react';
 import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './hooks/useLanguage';
 import { useCursor } from './hooks/useCursor';

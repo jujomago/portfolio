@@ -16,8 +16,8 @@ const About = () => {
     <section id="about" className={styles.about}>
       <div className={styles.aboutInner}>
         <div>
-          <span className={styles.sectionTag} data-animate="section-element">{t('about.tag')}</span>
-          <h2 className={styles.sectionTitle} data-animate="section-element">{t('about.title')}</h2>
+          <span className="sectionTag" data-animate="section-element">{t('about.tag')}</span>
+          <h2 className="sectionTitle" data-animate="section-element">{t('about.title')}</h2>
 
           <p className={styles.aboutText} data-animate="section-element">{t('about.p1')}</p>
           <p className={styles.aboutText} data-animate="section-element">{t('about.p2')}</p>
