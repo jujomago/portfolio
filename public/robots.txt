@@ -1,0 +1,7 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Disallow crawling of sensitive directories
+Disallow: /private/
+Disallow: /temp/
