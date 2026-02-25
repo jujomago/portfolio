@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import { socialLinksData } from '../data/portfolio';
 import styles from '../styles/Contact.module.css';
 
@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={`section ${styles.contact}`}>
       <div className={styles.contactInner}>
         <div className={styles.contactInfo}>
           <span className="sectionTag" data-animate="section-element">{t('contact.tag')}</span>

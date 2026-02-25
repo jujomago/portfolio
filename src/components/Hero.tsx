@@ -1,16 +1,16 @@
 import { useRef } from 'react';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 import Particles from './Particles';
 import styles from '../styles/Hero.module.css';
 
 const Hero = () => {
-  const { t } = useLanguage();
-  const { text } = useTypingEffect('es');
+  const { t, language } = useLanguage();
+  const { text } = useTypingEffect(language);
   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="hero" className={styles.hero} ref={heroRef}>
+    <section id="hero" className={`section ${styles.hero}`} ref={heroRef}>
       <Particles />
 
       <div className={styles.heroContent}>

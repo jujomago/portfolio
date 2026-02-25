@@ -4,7 +4,7 @@ export const useCursor = () => {
   const cursorDot = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const trailRef = useRef<Array<{ x: number; y: number; life: number }>>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const cursor = cursorDot.current;

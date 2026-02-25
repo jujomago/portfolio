@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import { skillsData } from '../data/portfolio';
 import styles from '../styles/Skills.module.css';
 
@@ -8,7 +8,7 @@ const Skills = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="skills" className={styles.skills}>
+    <section id="skills" className={`section ${styles.skills}`}>
       <div className={styles.skillsInner}>
         <div className={styles.skillsHeader}>
           <span className="sectionTag" data-animate="section-element">{t('skills.tag')}</span>

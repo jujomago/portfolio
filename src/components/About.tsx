@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import styles from '../styles/About.module.css';
 
 const About = () => {
@@ -13,7 +13,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className={styles.about}>
+    <section id="about" className={`section ${styles.about}`}>
       <div className={styles.aboutInner}>
         <div>
           <span className="sectionTag" data-animate="section-element">{t('about.tag')}</span>

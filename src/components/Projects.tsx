@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import { projectsData } from '../data/portfolio';
 import styles from '../styles/Projects.module.css';
 
@@ -8,7 +8,7 @@ const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="projects" className={`section ${styles.projects}`}>
       <div className={styles.projectsInner}>
         <div className={styles.projectsHeader}>
           <span className="sectionTag" data-animate="section-element">{t('projects.tag')}</span>
@@ -16,7 +16,7 @@ const Projects = () => {
         </div>
 
         <div className={styles.projectsGrid} ref={projectsRef}>
-          {projectsData.map((project, index) => (
+          {projectsData.map((project) => (
             <div key={project.id} className={styles.projectCard} data-animate="project-card">
               <div className={styles.projectNum}>
                 {String(project.id).padStart(2, '0')}

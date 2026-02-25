@@ -1,4 +1,4 @@
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../context/LanguageContext';
 import { timelineData } from '../data/portfolio';
 
 const Timeline = () => {
