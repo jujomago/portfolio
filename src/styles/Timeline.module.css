@@ -1,0 +1,133 @@
+.timeline {
+  padding: 10rem 0;
+  overflow: hidden;
+}
+
+.timelineInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.timelineWrap {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 0;
+  margin-top: 5rem;
+  position: relative;
+  align-items: stretch;
+}
+
+.timelineLine {
+  background: linear-gradient(to bottom, transparent 0%, var(--accent) 20%, var(--accent) 80%, transparent 100%);
+  position: relative;
+  align-self: stretch;
+  min-height: 100%;
+}
+
+.timelineLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.timelineItem {
+  padding: 0 3rem 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.timelineItem.left {
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.timelineItem.right {
+  padding-left: 3rem;
+}
+
+.timelineItem.empty {
+  padding: 0;
+}
+
+.timelineDate {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timelineEvent {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.timelineDetail {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.2rem;
+}
+
+/* Light theme overrides */
+[data-theme="light"] .timelineLine {
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+}
+
+[data-theme="light"] .timelineLine::before,
+[data-theme="light"] .timelineDot {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+[data-theme="light"] .timelineDot {
+  background: var(--bg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .timelineWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .timelineItem.left {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .timelineInner {
+    padding: 0 1.2rem;
+  }
+
+  .timelineItem {
+    padding: 0 0 3rem;
+  }
+}
