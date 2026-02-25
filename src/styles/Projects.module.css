@@ -25,21 +25,30 @@
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s,
+    box-shadow 0.3s;
   cursor: none;
 }
 
 .projectCard:hover {
   transform: translateY(-8px);
-  border-color: rgba(0,255,200,0.25);
-  box-shadow: 0 20px 60px rgba(0,255,200,0.05), 0 0 0 1px rgba(0,255,200,0.08);
+  border-color: rgba(0, 255, 200, 0.25);
+  box-shadow:
+    0 20px 60px rgba(0, 255, 200, 0.05),
+    0 0 0 1px rgba(0, 255, 200, 0.08);
 }
 
 .projectCard::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(0,255,200,0.04) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0, 255, 200, 0.04) 0%,
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -52,12 +61,15 @@
   font-family: var(--font-display);
   font-size: 4rem;
   font-weight: 800;
-  color: rgba(255,255,255,0.04);
+  color: rgba(255, 255, 255, 0.04);
   line-height: 1;
   margin-bottom: -0.5rem;
   letter-spacing: -0.05em;
 }
-
+/* slightly stronger in light theme for better visibility */
+[data-theme="light"] .projectNum {
+  color: rgba(0, 0, 0, 0.1);
+}
 .projectTitle {
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -131,7 +143,7 @@
 }
 
 .btnPrimary::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--accent);
@@ -150,13 +162,30 @@
 }
 
 /* Light theme overrides */
+[data-theme="light"] .projectCard {
+  /* border uses var(--border) which is already light, but explicit just in case */
+  border-color: var(--border);
+}
+
 [data-theme="light"] .projectCard:hover {
-  border-color: rgba(212,132,90,0.35);
-  box-shadow: 0 20px 60px rgba(212,132,90,0.08), 0 0 0 1px rgba(212,132,90,0.12);
+  /* use theme accent to avoid chocolate appearance */
+  border-color: rgba(var(--accent-rgb), 0.35);
+  box-shadow:
+    0 20px 60px rgba(var(--accent-rgb), 0.08),
+    0 0 0 1px rgba(var(--accent-rgb), 0.12);
 }
 
 [data-theme="light"] .projectCard::after {
-  background: radial-gradient(circle at 50% 0%, rgba(212,132,90,0.06) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(var(--accent-rgb), 0.06) 0%,
+    transparent 60%
+  );
+}
+
+[data-theme="light"] .tag {
+  border-color: var(--border);
+  color: var(--muted);
 }
 
 [data-theme="light"] .btnPrimary::before {

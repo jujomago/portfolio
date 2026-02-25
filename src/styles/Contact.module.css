@@ -6,14 +6,18 @@
 }
 
 .contact::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(0,255,200,0.03) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 200, 0.03) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -100,14 +104,18 @@
   font-size: 0.85rem;
   padding: 0.9rem 1rem;
   outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   resize: none;
 }
 
 .formInput:focus,
 .formTextarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(0,255,200,0.1), 0 0 20px rgba(0,255,200,0.03);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 200, 0.1),
+    0 0 20px rgba(0, 255, 200, 0.03);
 }
 
 .formTextarea {
@@ -131,7 +139,7 @@
 }
 
 .formSubmit::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--accent);
@@ -151,12 +159,18 @@
 
 /* Light theme overrides */
 [data-theme="light"] .contact::before {
-  background: radial-gradient(circle, rgba(212,132,90,0.05) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(var(--accent-rgb), 0.05) 0%,
+    transparent 70%
+  );
 }
 
 [data-theme="light"] .formInput:focus,
 [data-theme="light"] .formTextarea:focus {
-  box-shadow: 0 0 0 1px rgba(212,132,90,0.15), 0 0 20px rgba(212,132,90,0.05);
+  box-shadow:
+    0 0 0 1px rgba(var(--accent-rgb), 0.15),
+    0 0 20px rgba(var(--accent-rgb), 0.05);
 }
 
 [data-theme="light"] .formSubmit::before {

@@ -1,25 +1,29 @@
 :root {
   --bg: #050a0e;
   --bg2: #080f14;
-  --surface: rgba(255,255,255,0.03);
+  --surface: rgba(255, 255, 255, 0.03);
   --border: rgba(0, 255, 200, 0.12);
   --accent: #00ffc8;
+  --accent-rgb: 0, 255, 200;
   --accent2: #00a8ff;
   --text: #e8f4f0;
   --muted: #5a7a70;
-  --font-display: 'Syne', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
 }
 
 [data-theme="light"] {
-  --bg: #1e1410;
-  --bg2: #17100d;
-  --surface: rgba(255,255,255,0.05);
-  --border: rgba(210, 140, 80, 0.2);
-  --accent: #d4845a;
-  --accent2: #c0a060;
-  --text: #e8d8c8;
-  --muted: #8a6a55;
+  /* updated light theme: truly bright colors */
+  --bg: #f5f5f5;
+  --bg2: #ffffff;
+  --surface: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.1);
+  --accent: #007acc;
+  --accent-rgb: 0, 122, 204;
+  /* more contrasting secondary accent for light theme */
+  --accent2: #ff6b6b;
+  --text: #111111;
+  --muted: #666666;
 }
 
 *,
@@ -40,7 +44,9 @@ body {
   font-family: var(--font-mono);
   overflow-x: hidden;
   cursor: none;
-  transition: background 0.4s, color 0.4s;
+  transition:
+    background 0.4s,
+    color 0.4s;
 }
 
 /* APP CONTAINER */
@@ -52,7 +58,7 @@ body {
 
 /* NOISE */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
@@ -110,7 +116,7 @@ body:has(button:hover) .cursor {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
 }
