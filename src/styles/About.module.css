@@ -113,11 +113,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 200, 0.05) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 255, 200, 0.05) 0%,
+      transparent 60%);
 }
 
 .aboutImgDeco {
@@ -142,11 +140,9 @@
 
 /* Light theme overrides */
 [data-theme="light"] .aboutImgPlaceholder::before {
-  background: linear-gradient(
-    135deg,
-    rgba(var(--accent-rgb), 0.07) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(135deg,
+      rgba(var(--accent-rgb), 0.07) 0%,
+      transparent 60%);
 }
 
 [data-theme="light"] .aboutImgDeco2 {
@@ -155,6 +151,10 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .about {
+    padding: 7rem 0;
+  }
+
   .aboutInner {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -171,7 +171,12 @@
   }
 
   .aboutStats {
-    grid-template-columns: 1fr;
+
+    /* grid-template-columns: 1fr; */
     gap: 1rem;
+  }
+
+  .statNum {
+    font-size: 2rem;
   }
 }

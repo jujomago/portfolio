@@ -159,7 +159,12 @@
     grid-template-columns: 1fr;
   }
 
-  .timeline-line-bg {
+  .timeline {
+    padding: 7rem 0;
+  }
+
+  .timeline-line-bg,
+  .timeline-center-col {
     display: none;
   }
 

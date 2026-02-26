@@ -64,7 +64,7 @@ export const projectsData: Project[] = [
     title: 'PetScoutly',
     description: 'Plataforma web para recuperación de mascotas perdidas y gestión de adopciones, con notificaciones push en tiempo real y UI responsiva.',
     stack: ['Next.js', 'React', 'PostgreSQL', 'Prisma', 'OneSignal', 'Vercel'],
-    demoUrl: '#',
+    demoUrl: 'https://petscoutly.app/',
     githubUrl: '#'
   },
   {
@@ -73,7 +73,7 @@ export const projectsData: Project[] = [
     description: 'API REST pública con información de destinos turísticos en Bolivia. Panel admin en React + TypeScript y documentación OpenAPI con Docusaurus.',
     stack: ['Node.js', 'Express', 'React', 'TypeScript', 'PostgreSQL', 'Supabase'],
     demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/jujomago/Bolivia-Places-API'
   },
   {
     id: 3,
@@ -132,18 +132,18 @@ export const socialLinksData: SocialLink[] = [
   {
     icon: '@',
     label: 'email',
-    url: 'mailto:contact@example.com'
+    url: 'mailto:jujomago@gmail.com'
   },
   {
-    icon: '⌥',
-    label: 'GitHub',
-    url: 'https://github.com'
+    icon: 'gh',
+    label: 'github.com/jujomago',
+    url: 'https://github.com/jujomago'
   }
 ];
 
 export const marqueeItems = [
-  "React", "TypeScript", "Next.js", "Node.js", "PostgreSQL", "MongoDB", 
-  "GraphQL", "REST APIs", "AWS", "Docker", "Jest", "Scrum", "SOLID", 
+  "React", "TypeScript", "Next.js", "Node.js", "PostgreSQL", "MongoDB",
+  "GraphQL", "REST APIs", "AWS", "Docker", "Jest", "Scrum", "SOLID",
   "Storybook", "Prisma", "Vercel"
 ];
 

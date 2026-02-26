@@ -1,30 +1,55 @@
-import { useState } from 'react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { socialLinksData } from '../data/portfolio';
 import styles from '../styles/Contact.module.css';
 
+// Sub-component for the submit button to use useFormStatus
+const SubmitButton = ({ t, language }: { t: any; language: string }) => {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className={`${styles.formSubmit} ${pending ? styles.sending : ''}`}
+      data-animate="section-element"
+    >
+      {pending
+        ? (language === 'es' ? 'Enviando...' : 'Sending...')
+        : t('contact.send')}
+    </button>
+  );
+};
+
 const Contact = () => {
-  const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const { t, language } = useLanguage();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  // Action for React 19 useActionState
+  const [state, formAction] = useActionState(
+    async (_prevState: any, formData: FormData) => {
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    // You could integrate with EmailJS, Formspree, or backend API
-  };
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          return { success: true, message: '¡Mensaje enviado con éxito!' };
+        }
+        return { success: false, error: result.error || 'Error al enviar' };
+      } catch (error) {
+        return { success: false, error: 'Hubo un problema de conexión' };
+      }
+    },
+    { success: false, error: null }
+  );
 
   return (
     <section id="contact" className={`section ${styles.contact}`}>
@@ -54,7 +79,12 @@ const Contact = () => {
         </div>
 
         <div>
-          <form className={styles.contactForm} onSubmit={handleSubmit}>
+          <form action={formAction} className={styles.contactForm}>
+            {/* Honeypot field for bots */}
+            <div className={styles.honeypot}>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
+
             <div className="form-group" data-animate="section-element">
               <label className={styles.formLabel}>
                 {t('contact.name')}
@@ -64,8 +94,6 @@ const Contact = () => {
                 name="name"
                 className={styles.formInput}
                 placeholder={t('contact.namePh')}
-                value={formData.name}
-                onChange={handleInputChange}
                 required
               />
             </div>
@@ -79,8 +107,6 @@ const Contact = () => {
                 name="email"
                 className={styles.formInput}
                 placeholder="tu@email.com"
-                value={formData.email}
-                onChange={handleInputChange}
                 required
               />
             </div>
@@ -93,15 +119,22 @@ const Contact = () => {
                 name="message"
                 className={styles.formTextarea}
                 placeholder={t('contact.messagePh')}
-                value={formData.message}
-                onChange={handleInputChange}
                 required
               />
             </div>
 
-            <button type="submit" className={styles.formSubmit} data-animate="section-element">
-              {t('contact.send')}
-            </button>
+            <SubmitButton t={t} language={language} />
+
+            {state?.success && (
+              <p className={styles.successMessage} data-animate="section-element">
+                {language === 'es' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!'}
+              </p>
+            )}
+            {state?.error && (
+              <p className={styles.errorMessage} data-animate="section-element">
+                {state.error}
+              </p>
+            )}
           </form>
         </div>
       </div>
