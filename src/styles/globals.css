@@ -154,15 +154,15 @@
   .sectionTitle {
     font-size: clamp(1.5rem, 8vw, 2.5rem);
   }
-  
+
   .timeline-wrap {
     grid-template-columns: 1fr;
   }
-  
-  .timeline-line {
+
+  .timeline-line-bg {
     display: none;
   }
-  
+
   .timeline-item.left {
     text-align: left;
   }
@@ -173,7 +173,7 @@
     font-size: 0.6rem;
     padding: 0.25rem 0.6rem;
   }
-  
+
   .timeline-inner {
     padding: 0 1.2rem;
   }

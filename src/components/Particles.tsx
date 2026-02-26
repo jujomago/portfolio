@@ -39,7 +39,7 @@ const Particles = () => {
           background: { color: { value: "transparent" } },
           fpsLimit: 60,
           particles: {
-            number: { value: 90, density: { enable: true, value_area: 800 } },
+            number: { value: 90, limit: 150, density: { enable: true, value_area: 800 } },
             color: { value: colors.dots },
             opacity: {
               value: 0.65,

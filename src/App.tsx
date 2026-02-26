@@ -4,7 +4,7 @@ import { useTheme } from './hooks/useTheme';
 import { useLanguage } from './context/LanguageContext';
 import { useCursor } from './hooks/useCursor';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
+import HeroNew from './components/HeroNew';
 import Marquee from './components/Marquee';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -38,7 +38,7 @@ function AppContent() {
       <canvas ref={canvasRef} className={styles.trailCanvas}></canvas>
 
       <Navigation />
-      <Hero />
+      <HeroNew />
       <Marquee />
       <About />
       <Skills />

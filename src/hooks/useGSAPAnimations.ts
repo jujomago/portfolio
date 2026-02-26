@@ -10,31 +10,71 @@ export const useGSAPAnimations = () => {
     // Hero entrance animations
     const heroTl = gsap.timeline({ delay: 0.3 });
 
-    heroTl
-      .fromTo('[data-animate="hero-label"]',
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
-      )
-      .fromTo('[data-animate="hero-name"]',
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
-        '-=0.4'
-      )
-      .fromTo('[data-animate="hero-subtitle"]',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        '-=0.5'
-      )
-      .fromTo('[data-animate="hero-cta"]',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        '-=0.4'
-      )
-      .fromTo('[data-animate="scroll-indicator"]',
-        { opacity: 0 },
-        { opacity: 1, duration: 0.8 },
-        '-=0.2'
-      );
+    // New Hero animations (grid layout with left/right)
+    if (document.querySelector('[data-animate="hero-greeting"]')) {
+      heroTl
+        .fromTo('[data-animate="hero-greeting"]',
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+        )
+        .fromTo('[data-animate="hero-role"]',
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
+          '-=0.4'
+        )
+        .fromTo('[data-animate="hero-desc"]',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.5'
+        )
+        .fromTo('[data-animate="hero-actions"]',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.4'
+        )
+        .fromTo('[data-animate="hero-stack"]',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.4'
+        )
+        .fromTo('[data-animate="hero-right"]',
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0, duration: 1, ease: 'power3.out' },
+          '-=0.8'
+        )
+        .fromTo('[data-animate="scroll-indicator"]',
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8 },
+          '-=0.2'
+        );
+    } else {
+      // Old Hero animations (centered layout)
+      heroTl
+        .fromTo('[data-animate="hero-label"]',
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+        )
+        .fromTo('[data-animate="hero-name"]',
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
+          '-=0.4'
+        )
+        .fromTo('[data-animate="hero-subtitle"]',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.5'
+        )
+        .fromTo('[data-animate="hero-cta"]',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.4'
+        )
+        .fromTo('[data-animate="scroll-indicator"]',
+          { opacity: 0 },
+          { opacity: 1, duration: 0.8 },
+          '-=0.2'
+        );
+    }
 
     // Section fade-ins
     const sectionElements = document.querySelectorAll('[data-animate="section-element"]');
