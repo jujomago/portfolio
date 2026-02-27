@@ -36,6 +36,13 @@ const SEO = () => {
 
         // Update html lang attribute
         document.documentElement.lang = language;
+
+        // Update Theme Color meta tag
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+            const currentBg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+            themeColor.setAttribute('content', currentBg);
+        }
     }, [t, language]);
 
     return null; // This component doesn't render anything
