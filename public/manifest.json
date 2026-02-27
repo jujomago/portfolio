@@ -1,0 +1,24 @@
+{
+    "name": "Josue Mancilla | Senior Fullstack Developer",
+    "short_name": "JosueM.",
+    "description": "Portfolio profesional de Josue Mancilla, Senior Fullstack Developer en Tarija, Bolivia.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#050a0e",
+    "theme_color": "#050a0e",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
