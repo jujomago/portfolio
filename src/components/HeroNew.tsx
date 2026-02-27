@@ -11,8 +11,6 @@ type CodeLine = { parts: CodePart[]; indent?: number };
 
 const stackItems = ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS'];
 
-
-
 const colorStyles: Record<CodePartType, React.CSSProperties> = {
   kw: { color: 'var(--code-kw)' },
   fn: { color: 'var(--code-fn)' },
@@ -42,9 +40,7 @@ const HeroNew = () => {
     { parts: [{ type: 'cm', text: `// ${t('hero.code.learning')} 🚀` }] },
   ];
 
-  const fullText = language === 'es'
-    ? 'Creo experiencias digitales con código limpio, arquitectura escalable y atención al detalle.'
-    : 'I craft digital experiences with clean code, scalable architecture, and attention to detail.';
+  const fullText = t('hero.desc');
 
   const [hasAnimated, setHasAnimated] = useState(false);
 

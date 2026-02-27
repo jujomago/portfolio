@@ -8,8 +8,8 @@
   margin: 0 auto;
   padding: 0 3rem;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 6rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -87,6 +87,8 @@
 
 .aboutVisual {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .aboutImgWrap {

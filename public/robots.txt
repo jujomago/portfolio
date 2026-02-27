@@ -5,3 +5,5 @@ Allow: /
 # Disallow crawling of sensitive directories
 Disallow: /private/
 Disallow: /temp/
+
+Sitemap: https://josuemancilla.vercel.app/sitemap.xml

@@ -40,16 +40,7 @@ export interface Translations {
   en: Translation;
 }
 
-export interface ThemeColors {
-  bg: string;
-  bg2: string;
-  surface: string;
-  border: string;
-  accent: string;
-  accent2: string;
-  text: string;
-  muted: string;
-}
+
 
 export type Theme = 'dark' | 'light';
 export type Language = 'es' | 'en';

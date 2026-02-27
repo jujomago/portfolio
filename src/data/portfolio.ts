@@ -147,17 +147,4 @@ export const marqueeItems = [
   "Storybook", "Prisma", "Vercel"
 ];
 
-export const typingPhrases = {
-  es: [
-    "React · TypeScript · Next.js · Node.js",
-    "Más de 10 años construyendo para la web.",
-    "Del backend al frontend, una sola visión.",
-    "Autodidacta. Curioso. Apasionado del código."
-  ],
-  en: [
-    "React · TypeScript · Next.js · Node.js",
-    "10+ years building for the web.",
-    "From backend to frontend, one vision.",
-    "Self-taught. Curious. Passionate about code."
-  ]
-};
+

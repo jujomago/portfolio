@@ -118,45 +118,6 @@ body:has(button:hover) .cursor {
   box-shadow: 0 0 14px var(--accent);
 }
 
-/* SECTIONS SHARED */
-.section {
-  position: relative;
-}
-
-.sectionTag {
-  display: inline-block;
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--border);
-  padding: 0.3rem 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.sectionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .sectionTitle {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
-  }
-}
-
-@media (max-width: 600px) {
-  .sectionTag {
-    font-size: 0.6rem;
-    padding: 0.25rem 0.6rem;
-  }
-}
-
 /* FOOTER */
 footer {
   padding: 2.5rem 3rem;
