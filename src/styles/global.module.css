@@ -71,6 +71,13 @@ body {
     color 0.4s;
 }
 
+/* Restore default cursor on devices that don't have a fine pointer (touchscreens) */
+@media (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+}
+
 /* APP CONTAINER */
 .app {
   position: relative;
@@ -110,6 +117,14 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 9997;
+}
+
+@media (pointer: coarse) {
+
+  .cursor,
+  .trailCanvas {
+    display: none !important;
+  }
 }
 
 body:has(a:hover) .cursor,

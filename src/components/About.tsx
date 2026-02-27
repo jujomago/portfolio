@@ -1,10 +1,29 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import styles from '../styles/About.module.css';
 import mifoto from '../assets/mifoto.jpg';
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [language]);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
   const statsRef = useRef<HTMLDivElement>(null);
 
   const stats = [
@@ -54,8 +73,34 @@ const About = () => {
 
         <div className={styles.aboutVisual} data-animate="section-element">
           <div className={styles.aboutImgWrap}>
-            <div className={styles.aboutImgContainer}>
+            <div className={`${styles.aboutImgContainer} ${isPlaying ? styles.videoActive : ''}`}>
               <img src={mifoto} alt="Josue Mancilla" className={styles.aboutImg} />
+              <video
+                ref={videoRef}
+                className={styles.aboutVideo}
+                onEnded={() => setIsPlaying(false)}
+                playsInline
+              >
+                <source src={`/presentation-${language}.mp4`} type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+
+              <button
+                className={`${styles.playButton} ${isPlaying ? styles.isPlaying : ''}`}
+                onClick={handlePlay}
+                aria-label={isPlaying ? "Pausar video" : "Reproducir video de presentación"}
+              >
+                {isPlaying ? (
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16" />
+                    <rect x="14" y="4" width="4" height="16" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
+              </button>
             </div>
             <div className={styles.aboutImgDeco}></div>
             <div className={styles.aboutImgDeco2}></div>

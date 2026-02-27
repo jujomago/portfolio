@@ -7,6 +7,10 @@ export const useCursor = () => {
   const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
+    // Skip all logic if the device uses a touch screen (coarse pointer)
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouch) return;
+
     const cursor = cursorDot.current;
     const canvas = canvasRef.current;
     if (!cursor || !canvas) return;
@@ -32,10 +36,10 @@ export const useCursor = () => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      
+
       cursor.style.left = mouseX + 'px';
       cursor.style.top = mouseY + 'px';
-      
+
       trailRef.current.push({ x: mouseX, y: mouseY, life: 1.0 });
       if (trailRef.current.length > TRAIL_LENGTH) {
         trailRef.current.shift();
@@ -45,16 +49,16 @@ export const useCursor = () => {
     const animateTrail = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const color = getAccentColor();
-      
+
       for (let i = 0; i < trailRef.current.length; i++) {
         const p = trailRef.current[i];
         p.life -= 0.04;
         if (p.life <= 0) continue;
-        
+
         const ratio = i / trailRef.current.length;
         const radius = ratio * 5;
         const alpha = p.life * ratio * 0.7;
-        
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(radius, 0.5), 0, Math.PI * 2);
         ctx.fillStyle = color;
