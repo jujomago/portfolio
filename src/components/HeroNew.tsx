@@ -33,7 +33,7 @@ const HeroNew = () => {
     { parts: [{ type: 'fn', text: t('hero.code.role') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Senior Fullstack Dev"' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'fn', text: t('hero.code.experience') }, { type: 'tx', text: ': ' }, { type: 'acc', text: '10' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'fn', text: 'stack' }, { type: 'tx', text: ': [' }, { type: 'str', text: '"React"' }, { type: 'tx', text: ', ' }, { type: 'str', text: '"TS"' }, { type: 'tx', text: ', ' }, { type: 'str', text: '"Node"' }, { type: 'tx', text: '],' }], indent: 1 },
-    { parts: [{ type: 'fn', text: t('hero.code.location') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Bolivia 🇧🇴"' }, { type: 'tx', text: ',' }], indent: 1 },
+    { parts: [{ type: 'fn', text: t('hero.code.location') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Tarija, Bolivia 🇧🇴"' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'fn', text: t('hero.code.available') }, { type: 'tx', text: ': ' }, { type: 'kw', text: 'true' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'tx', text: '};' }] },
     { parts: [] },
