@@ -10,6 +10,17 @@
   --muted: #5a7a70;
   --font-display: "Syne", sans-serif;
   --font-mono: "DM Mono", monospace;
+
+  /* Code Syntax Highlighting */
+  --code-bg: rgba(2, 6, 10, 0.8);
+  --code-header: rgba(5, 10, 14, 0.9);
+  --code-kw: #c792ea;
+  --code-fn: #82aaff;
+  --code-str: #c3e88d;
+  --code-cm: #546e7a;
+  --code-tx: #e8f4f0;
+  --code-ln: rgba(255, 255, 255, 0.2);
+  --code-shadow: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] {
@@ -24,6 +35,17 @@
   --accent2: #ff6b6b;
   --text: #111111;
   --muted: #666666;
+
+  /* Code Syntax Highlighting in Light Mode: Brighter theme */
+  --code-bg: #ffffff;
+  --code-header: #f3f3f3;
+  --code-kw: #d73a49;
+  --code-fn: #6f42c1;
+  --code-str: #22863a;
+  --code-cm: #6a737d;
+  --code-tx: #24292e;
+  --code-ln: rgba(0, 0, 0, 0.3);
+  --code-shadow: rgba(0, 0, 0, 0.1);
 }
 
 *,

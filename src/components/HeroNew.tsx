@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { useLanguage } from '../context/LanguageContext';
 import Particles from './Particles';
+import avatar from '../assets/avatar.png';
 import styles from '../styles/HeroNew.module.css';
 
 type CodePartType = 'kw' | 'fn' | 'str' | 'cm' | 'acc' | 'tx';
@@ -13,12 +14,12 @@ const stackItems = ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', '
 
 
 const colorStyles: Record<CodePartType, React.CSSProperties> = {
-  kw: { color: '#c792ea' },
-  fn: { color: '#82aaff' },
-  str: { color: '#c3e88d' },
-  cm: { color: '#546e7a', fontStyle: 'italic' },
+  kw: { color: 'var(--code-kw)' },
+  fn: { color: 'var(--code-fn)' },
+  str: { color: 'var(--code-str)' },
+  cm: { color: 'var(--code-cm)', fontStyle: 'italic' },
   acc: { color: 'var(--accent)' },
-  tx: { color: 'var(--text)' },
+  tx: { color: 'var(--code-tx)' },
 };
 
 const HeroNew = () => {
@@ -138,10 +139,7 @@ const HeroNew = () => {
         <div className={styles.heroRight} data-animate="hero-right">
           <div className={styles.heroAvatarWrap}>
             <div className={styles.heroAvatar}>
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.8">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <img src={avatar} alt="Josue Mancilla" className={styles.avatarImg} />
             </div>
             <div className={styles.heroAvatarRing}></div>
           </div>

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import styles from '../styles/About.module.css';
+import mifoto from '../assets/mifoto.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -53,19 +54,8 @@ const About = () => {
 
         <div className={styles.aboutVisual} data-animate="section-element">
           <div className={styles.aboutImgWrap}>
-            <div className={styles.aboutImgPlaceholder}>
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.5"
-                opacity="0.3"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+            <div className={styles.aboutImgContainer}>
+              <img src={mifoto} alt="Josue Mancilla" className={styles.aboutImg} />
             </div>
             <div className={styles.aboutImgDeco}></div>
             <div className={styles.aboutImgDeco2}></div>

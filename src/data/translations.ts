@@ -72,6 +72,8 @@ export const translations: Translations = {
     "hero.code.location": "ubicación",
     "hero.code.available": "disponible",
     "hero.code.learning": "siempre aprendiendo",
+    "contact.success": "¡Genial! He recibido tu mensaje. Te respondere lo mas pronto posible. ✨",
+    "contact.error": "Ups, algo salió mal. Inténtalo de nuevo o escríbeme directamente.",
     "footer.tagline": "Built with passion & caffeine ☕"
   },
   en: {
@@ -145,6 +147,8 @@ export const translations: Translations = {
     "hero.code.location": "location",
     "hero.code.available": "available",
     "hero.code.learning": "always learning",
+    "contact.success": "Awesome! I've received your message. I'll get back to you as soon as possible. ✨",
+    "contact.error": "Oops, something went wrong. Try again or email me directly.",
     "footer.tagline": "Built with passion & caffeine ☕"
   }
 };

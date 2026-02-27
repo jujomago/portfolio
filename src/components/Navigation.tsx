@@ -40,7 +40,7 @@ const Navigation = () => {
     <>
       <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
         <a href="#hero" className={styles.navLogo}>
-          JM<span>.</span>
+          JJMG<span>.</span>
         </a>
 
         <ul className={styles.navLinks}>

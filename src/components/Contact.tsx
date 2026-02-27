@@ -41,11 +41,11 @@ const Contact = () => {
 
         const result = await response.json();
         if (result.success) {
-          return { success: true, message: '¡Mensaje enviado con éxito!' };
+          return { success: true, message: null };
         }
-        return { success: false, error: result.error || 'Error al enviar' };
+        return { success: false, error: result.error || null };
       } catch (error) {
-        return { success: false, error: 'Hubo un problema de conexión' };
+        return { success: false, error: 'connection_error' };
       }
     },
     { success: false, error: null }
@@ -127,12 +127,12 @@ const Contact = () => {
 
             {state?.success && (
               <p className={styles.successMessage} data-animate="section-element">
-                {language === 'es' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!'}
+                {t('contact.success')}
               </p>
             )}
             {state?.error && (
               <p className={styles.errorMessage} data-animate="section-element">
-                {state.error}
+                {state.error === 'connection_error' ? t('contact.error') : (state.error || t('contact.error'))}
               </p>
             )}
           </form>
