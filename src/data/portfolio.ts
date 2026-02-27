@@ -72,7 +72,7 @@ export const projectsData: Project[] = [
     title: 'Bolivia API',
     description: 'API REST pública con información de destinos turísticos en Bolivia. Panel admin en React + TypeScript y documentación OpenAPI con Docusaurus.',
     stack: ['Node.js', 'Express', 'React', 'TypeScript', 'PostgreSQL', 'Supabase'],
-    demoUrl: '#',
+    demoUrl: 'https://bolivia-places-api.vercel.app/reference',
     githubUrl: 'https://github.com/jujomago/Bolivia-Places-API'
   },
   {
