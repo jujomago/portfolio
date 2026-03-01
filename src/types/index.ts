@@ -13,6 +13,7 @@ export interface Project {
   title: string;
   description: string;
   stack: string[];
+  images?: string[];
   demoUrl?: string;
   githubUrl?: string;
 }
@@ -39,8 +40,6 @@ export interface Translations {
   es: Translation;
   en: Translation;
 }
-
-
 
 export type Theme = 'dark' | 'light';
 export type Language = 'es' | 'en';

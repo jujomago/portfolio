@@ -64,6 +64,10 @@ export const projectsData: Project[] = [
     title: 'PetScoutly',
     description: 'Plataforma web para recuperación de mascotas perdidas y gestión de adopciones, con notificaciones push en tiempo real y UI responsiva.',
     stack: ['Next.js', 'React', 'PostgreSQL', 'Prisma', 'OneSignal', 'Vercel'],
+    images: [
+      'https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=400&fit=crop',
+    ],
     demoUrl: 'https://petscoutly.app/',
     githubUrl: '#'
   },
@@ -72,6 +76,9 @@ export const projectsData: Project[] = [
     title: 'Bolivia REST API',
     description: 'API REST pública con información de destinos turísticos en Bolivia. Panel admin en React + TypeScript y documentación OpenAPI con Docusaurus.',
     stack: ['Node.js', 'Express', 'React', 'TypeScript', 'PostgreSQL', 'Supabase'],
+    // images: [
+    //   'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600&h=400&fit=crop',
+    // ],
     demoUrl: 'https://bolivia-places-api.vercel.app/reference',
     githubUrl: 'https://github.com/jujomago/Bolivia-Places-API'
   },
