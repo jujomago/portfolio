@@ -10,7 +10,7 @@ type CodePartType = 'kw' | 'fn' | 'str' | 'cm' | 'acc' | 'tx';
 type CodePart = { type: CodePartType; text: string };
 type CodeLine = { parts: CodePart[]; indent?: number };
 
-const stackItems = ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS'];
+const stackItems = ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'AI-DRIVEN'];
 
 const colorStyles: Record<CodePartType, React.CSSProperties> = {
   kw: { color: 'var(--code-kw)' },
@@ -31,7 +31,7 @@ const HeroNew = () => {
   const codeLines: CodeLine[] = [
     { parts: [{ type: 'kw', text: 'const' }, { type: 'tx', text: ' ' }, { type: 'acc', text: t('hero.code.developer') }, { type: 'tx', text: ' = ' }, { type: 'tx', text: '{' }] },
     { parts: [{ type: 'fn', text: t('hero.code.name') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Josue Mancilla"' }, { type: 'tx', text: ',' }], indent: 1 },
-    { parts: [{ type: 'fn', text: t('hero.code.role') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Senior Fullstack Dev"' }, { type: 'tx', text: ',' }], indent: 1 },
+    { parts: [{ type: 'fn', text: t('hero.code.role') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"AI-Driven Dev"' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'fn', text: t('hero.code.experience') }, { type: 'tx', text: ': ' }, { type: 'acc', text: '10' }, { type: 'tx', text: ',' }], indent: 1 },
     { parts: [{ type: 'fn', text: 'stack' }, { type: 'tx', text: ': [' }, { type: 'str', text: '"React"' }, { type: 'tx', text: ', ' }, { type: 'str', text: '"TS"' }, { type: 'tx', text: ', ' }, { type: 'str', text: '"Node"' }, { type: 'tx', text: '],' }], indent: 1 },
     { parts: [{ type: 'fn', text: t('hero.code.location') }, { type: 'tx', text: ': ' }, { type: 'str', text: '"Tarija, Bolivia 🇧🇴"' }, { type: 'tx', text: ',' }], indent: 1 },
