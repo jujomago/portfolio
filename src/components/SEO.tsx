@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useRotatingTitle } from '../hooks/useRotatingTitle';
 
 const SEO = () => {
     const { t, language } = useLanguage();
 
-    useEffect(() => {
-        // Update Document Title
-        document.title = t('seo.title');
+    useRotatingTitle(t('seo.title'));
 
+    useEffect(() => {
         // Update Meta Description
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
@@ -45,7 +45,7 @@ const SEO = () => {
         }
     }, [t, language]);
 
-    return null; // This component doesn't render anything
+    return null;
 };
 
 export default SEO;
