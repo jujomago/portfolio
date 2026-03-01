@@ -76,9 +76,9 @@ export const projectsData: Project[] = [
     title: 'Bolivia API',
     description: 'API REST pública con información de destinos turísticos en Bolivia. Panel admin en React + TypeScript y documentación OpenAPI con Docusaurus.',
     stack: ['Node.js', 'Express', 'React', 'TypeScript', 'PostgreSQL', 'Supabase'],
-    // images: [
-    //   'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600&h=400&fit=crop',
-    // ],
+    images: [
+      'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600&h=400&fit=crop',
+    ],
     demoUrl: '#',
     githubUrl: 'https://github.com/jujomago/Bolivia-Places-API'
   },
