@@ -84,7 +84,7 @@ export const projectsData: Project[] = [
     images: [
       'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600&h=400&fit=crop',
     ],
-    demoUrl: '#',
+    demoUrl: 'https://bolivia-places-api.vercel.app/reference',
     githubUrl: 'https://github.com/jujomago/Bolivia-Places-API'
   },
   {

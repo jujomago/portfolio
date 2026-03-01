@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/TechBadge.module.css';
+import { useHoverSound } from '../hooks/useHoverSound';
 
 export const getTechColor = (tech: string) => {
     const t = tech.toLowerCase();
@@ -26,11 +27,13 @@ interface TechBadgeProps {
 
 const TechBadge: React.FC<TechBadgeProps> = ({ tech }) => {
     const hoverColor = getTechColor(tech);
+    const playHoverSound = useHoverSound();
 
     return (
         <span
             className={styles.badge}
             style={{ '--hover-color': hoverColor } as React.CSSProperties}
+            onMouseEnter={playHoverSound}
         >
             {tech}
         </span>

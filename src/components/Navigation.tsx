@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { useLanguage } from "../context/LanguageContext";
+import { useHoverSound } from "../hooks/useHoverSound";
 import styles from "../styles/Navigation.module.css";
 
 const Navigation = () => {
@@ -8,6 +9,7 @@ const Navigation = () => {
   const { toggleLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const playHoverSound = useHoverSound();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,18 +45,19 @@ const Navigation = () => {
           JJMG<span>.</span>
         </a>
 
-        <ul className={styles.navLinks}>
+<ul className={styles.navLinks}>
           {navItems.map((item) => (
             <li key={item.key}>
-              <a href={item.href}>{t(item.key)}</a>
+              <a href={item.href} onMouseEnter={playHoverSound}>{t(item.key)}</a>
             </li>
           ))}
         </ul>
 
-        <div className={styles.navControls}>
+<div className={styles.navControls}>
           <button
             className={styles.langToggle}
             onClick={toggleLanguage}
+            onMouseEnter={playHoverSound}
             aria-label="Switch language"
           >
             <span className={`${styles.lIcon} ${styles.lEs}`}>
@@ -119,9 +122,10 @@ const Navigation = () => {
             </span>
           </button>
 
-          <button
+<button
             className={styles.themeToggle}
             onClick={toggleTheme}
+            onMouseEnter={playHoverSound}
             aria-label="Toggle theme"
           >
             <span className={`${styles.tIcon} ${styles.tMoon}`}>🌙</span>
