@@ -1,9 +1,11 @@
-import { useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 import styles from '../styles/Projects.module.css';
 
 const ProjectSlider = ({ images }: { images?: string[] }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
     if (!images || images.length === 0) {
         return (
             <div className={`${styles.sliderContainer} ${styles.placeholder}`}>
@@ -20,31 +22,46 @@ const ProjectSlider = ({ images }: { images?: string[] }) => {
         );
     }
 
-    const nextImage = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-    const prevImage = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    if (images.length === 1) {
+        return (
+            <div className={styles.sliderContainer}>
+                <img src={images[0]} alt="Project preview" className={styles.sliderImage} />
+            </div>
+        );
+    }
 
     return (
         <div className={styles.sliderContainer}>
-            <img src={images[currentIndex]} alt="Project preview" className={styles.sliderImage} />
-            {images.length > 1 && (
-                <>
-                    <button className={styles.sliderBtnPrev} onClick={prevImage} aria-label="Previous image">
-                        &lsaquo;
-                    </button>
-                    <button className={styles.sliderBtnNext} onClick={nextImage} aria-label="Next image">
-                        &rsaquo;
-                    </button>
-                    <div className={styles.sliderDots}>
-                        {images.map((_, idx) => (
-                            <span
-                                key={idx}
-                                className={`${styles.sliderDot} ${idx === currentIndex ? styles.sliderDotActive : ''}`}
-                                onClick={() => setCurrentIndex(idx)}
-                            />
-                        ))}
-                    </div>
-                </>
-            )}
+            <Swiper
+                modules={[Navigation, Pagination, EffectFade]}
+                effect="fade"
+                loop={true}
+                navigation={{
+                    nextEl: `.${styles.sliderBtnNext}`,
+                    prevEl: `.${styles.sliderBtnPrev}`,
+                }}
+                pagination={{
+                    el: `.${styles.sliderDots}`,
+                    clickable: true,
+                    bulletClass: styles.sliderDot,
+                    bulletActiveClass: styles.sliderDotActive,
+                }}
+                className={styles.swiperRoot}
+            >
+                {images.map((img, idx) => (
+                    <SwiperSlide key={idx} className={styles.swiperSlideItem}>
+                        <img src={img} alt={`Project preview ${idx}`} className={styles.sliderImage} />
+                    </SwiperSlide>
+                ))}
+
+                <button className={styles.sliderBtnPrev} aria-label="Previous image">
+                    &lsaquo;
+                </button>
+                <button className={styles.sliderBtnNext} aria-label="Next image">
+                    &rsaquo;
+                </button>
+                <div className={styles.sliderDots}></div>
+            </Swiper>
         </div>
     );
 };

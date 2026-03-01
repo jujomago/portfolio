@@ -268,6 +268,16 @@
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.swiperRoot {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperSlideItem {
+  width: 100%;
+  height: 100%;
+}
+
 .projectCard:hover .sliderImage {
   transform: scale(1.05);
   filter: grayscale(0);
@@ -292,6 +302,7 @@
   transition: opacity 0.3s, background 0.3s, color 0.3s;
   font-size: 1.2rem;
   line-height: 1;
+  z-index: 10;
 }
 
 .sliderContainer:hover .sliderBtnPrev,
@@ -322,6 +333,7 @@
   display: flex;
   justify-content: center;
   gap: 6px;
+  z-index: 10;
 }
 
 .sliderDot {
