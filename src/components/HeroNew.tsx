@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { useLanguage } from '../context/LanguageContext';
 import Particles from './Particles';
 import avatar from '../assets/avatar.png';
+import TechBadge from './TechBadge';
 import styles from '../styles/HeroNew.module.css';
 
 type CodePartType = 'kw' | 'fn' | 'str' | 'cm' | 'acc' | 'tx';
@@ -124,9 +125,7 @@ const HeroNew = () => {
 
           <div className={styles.heroStack} data-animate="hero-stack">
             {stackItems.map((tech) => (
-              <span key={tech} className={styles.heroStackBadge}>
-                {tech}
-              </span>
+              <TechBadge key={tech} tech={tech} />
             ))}
           </div>
         </div>

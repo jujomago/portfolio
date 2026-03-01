@@ -1,11 +1,15 @@
 import { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { projectsData } from '../data/portfolio';
+import ProjectSlider from './ProjectSlider';
+import TechBadge from './TechBadge';
 import styles from '../styles/Projects.module.css';
 
 const Projects = () => {
   const { t } = useLanguage();
   const projectsRef = useRef<HTMLDivElement>(null);
+
+  const hasAnyImages = projectsData.some(p => p.images && p.images.length > 0);
 
   return (
     <section id="projects" className={`section ${styles.projects}`}>
@@ -18,6 +22,8 @@ const Projects = () => {
         <div className={styles.projectsGrid} ref={projectsRef}>
           {projectsData.map((project) => (
             <div key={project.id} className={styles.projectCard} data-animate="project-card">
+              {hasAnyImages && <ProjectSlider images={project.images} />}
+
               <div className={styles.projectNum}>
                 {String(project.id).padStart(2, '0')}
               </div>
@@ -32,9 +38,7 @@ const Projects = () => {
 
               <div className={styles.projectStack}>
                 {project.stack.map((tech, techIndex) => (
-                  <span key={techIndex} className={styles.tag}>
-                    {tech}
-                  </span>
+                  <TechBadge key={techIndex} tech={tech} />
                 ))}
               </div>
 
