@@ -1,3 +1,8 @@
+# Agent directories
+.agent
+.agents
+.agent/*
+.agents/*
 # Logs
 logs
 *.log

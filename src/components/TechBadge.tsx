@@ -30,13 +30,14 @@ const TechBadge: React.FC<TechBadgeProps> = ({ tech }) => {
     const playHoverSound = useHoverSound();
 
     return (
-        <span
+        <button
             className={styles.badge}
             style={{ '--hover-color': hoverColor } as React.CSSProperties}
             onMouseEnter={playHoverSound}
+            type="button"
         >
             {tech}
-        </span>
+        </button>
     );
 };
 

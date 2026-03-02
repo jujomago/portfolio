@@ -62,7 +62,7 @@ const Contact = () => {
             {t('contact.text')}
           </p>
 
-          <div className={styles.socialLinks} data-animate="section-element">
+<div className={styles.socialLinks} data-animate="section-element">
             {socialLinksData.map((link, index) => (
               <a
                 key={index}
@@ -71,8 +71,8 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className={styles.icon}>{link.icon}</span>
-                {link.label} <span>→</span>
+                <span className={styles.icon} aria-hidden="true">{link.icon}</span>
+                {link.label} <span aria-hidden="true">→</span>
               </a>
             ))}
           </div>
@@ -89,9 +89,10 @@ const Contact = () => {
               <label className={styles.formLabel}>
                 {t('contact.name')}
               </label>
-              <input
+<input
                 type="text"
                 name="name"
+                autoComplete="name"
                 className={styles.formInput}
                 placeholder={t('contact.namePh')}
                 required
@@ -102,9 +103,10 @@ const Contact = () => {
               <label className={styles.formLabel}>
                 {t('contact.email')}
               </label>
-              <input
+<input
                 type="email"
                 name="email"
+                autoComplete="email"
                 className={styles.formInput}
                 placeholder="tu@email.com"
                 required
