@@ -8,8 +8,8 @@
   --accent2: #00a8ff;
   --text: #e8f4f0;
   --muted: #5a7a70;
-  --font-display: "Syne", sans-serif;
-  --font-mono: "DM Mono", monospace;
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
 
   /* Code Syntax Highlighting */
   --code-bg: rgba(2, 6, 10, 0.8);
@@ -64,11 +64,22 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
   transition:
     background 0.4s,
     color 0.4s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile - slightly larger for distance reading */
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+  }
 }
 
 /* Restore default cursor on devices that don't have a fine pointer (touchscreens) */

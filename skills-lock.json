@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "d8e7d3afe37dcc8a97b99ffb5afdb4d0919ae0092ea8b68f44eb201f035e33ac"
+    },
+    "web-typography": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "computedHash": "0ee1a0612ba46228dd54eb8a559a955e4f1948513b639a6c956d9772d41d0575"
+    }
+  }
+}

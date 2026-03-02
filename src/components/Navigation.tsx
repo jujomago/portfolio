@@ -128,8 +128,8 @@ const Navigation = () => {
             onMouseEnter={playHoverSound}
             aria-label="Toggle theme"
           >
-            <span className={`${styles.tIcon} ${styles.tMoon}`}>🌙</span>
-            <span className={`${styles.tIcon} ${styles.tSun}`}>☀️</span>
+<span className={`${styles.tIcon} ${styles.tMoon}`} aria-hidden="true">🌙</span>
+            <span className={`${styles.tIcon} ${styles.tSun}`} aria-hidden="true">☀️</span>
           </button>
 
           <button
