@@ -67,7 +67,7 @@
   line-height: 1;
   margin-bottom: -0.5rem;
   letter-spacing: -0.05em;
-  margin-top: auto;
+  /* margin-top: auto; */
 }
 
 /* slightly stronger in light theme for better visibility */
@@ -109,6 +109,7 @@
 .projectLinks {
   display: flex;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .btnGhost {

@@ -6,7 +6,7 @@ import TechBadge from './TechBadge';
 import styles from '../styles/Projects.module.css';
 
 const Projects = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const hasAnyImages = projectsData.some(p => p.images && p.images.length > 0);
@@ -29,11 +29,11 @@ const Projects = () => {
               </div>
 
               <h3 className={styles.projectTitle}>
-                {t(`projects.p${project.id}.title`)}
+                {project.title[language]}
               </h3>
 
               <p className={styles.projectDesc}>
-                {t(`projects.p${project.id}.desc`)}
+                {project.description[language]}
               </p>
 
               <div className={styles.projectStack}>
@@ -43,22 +43,26 @@ const Projects = () => {
               </div>
 
               <div className={styles.projectLinks}>
-                <a
-                  href={project.demoUrl}
-                  className={styles.btnPrimary}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('projects.demo')}
-                </a>
-                <a
-                  href={project.githubUrl}
-                  className={styles.btnGhost}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
+                {project.demoUrl && project.demoUrl !== '#' && (
+                  <a
+                    href={project.demoUrl}
+                    className={styles.btnPrimary}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('projects.demo')}
+                  </a>
+                )}
+                {project.githubUrl && project.githubUrl !== '#' && (
+                  <a
+                    href={project.githubUrl}
+                    className={styles.btnGhost}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
           ))}

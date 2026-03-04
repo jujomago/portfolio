@@ -4,7 +4,7 @@ import { skillsData } from '../data/portfolio';
 import styles from '../styles/Skills.module.css';
 
 const Skills = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const skillsRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -19,7 +19,7 @@ const Skills = () => {
           {skillsData.map((category, categoryIndex) => (
             <div key={categoryIndex} className={styles.skillCategory} data-animate="skill-category">
               <div className={styles.skillCatTitle}>
-                {t(`skills.${category.title.toLowerCase().split(' ')[0]}`)}
+                {category.title[language]}
               </div>
 
               <div className={styles.skillItems}>
