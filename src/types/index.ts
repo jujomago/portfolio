@@ -4,25 +4,25 @@ export interface Skill {
 }
 
 export interface SkillCategory {
-  title: string;
+  title: { es: string; en: string };
   skills: Skill[];
 }
 
 export interface Project {
   id: number;
-  title: string;
-  description: string;
+  title: { es: string; en: string };
+  description: { es: string; en: string };
   stack: string[];
-  images?: string[];
-  demoUrl?: string;
-  githubUrl?: string;
+  images: string[];
+  demoUrl: string;
+  githubUrl: string;
 }
 
 export interface TimelineItem {
   id: number;
-  date: string;
-  title: string;
-  description: string;
+  date: { es: string; en: string };
+  title: { es: string; en: string };
+  description: { es: string; en: string };
   position: 'left' | 'right';
 }
 
