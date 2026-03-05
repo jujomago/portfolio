@@ -8,6 +8,7 @@ import Marquee from './components/Marquee';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Labs from './components/Labs';
 import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 import SEO from './components/SEO';
@@ -34,6 +35,7 @@ function AppContent() {
       <Skills />
       <Projects />
       <Timeline />
+      <Labs />
       <Contact />
 
       <footer>

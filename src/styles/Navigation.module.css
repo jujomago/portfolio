@@ -63,6 +63,21 @@
   color: var(--accent);
 }
 
+.playgroundLink {
+  color: #ff4d4d !important;
+  font-weight: 700 !important;
+  opacity: 0.9;
+}
+
+.playgroundLink:hover {
+  opacity: 1;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+}
+
+.playgroundLinkMobile {
+  color: #ff4d4d !important;
+}
+
 .navControls {
   display: flex;
   align-items: center;
@@ -191,8 +206,8 @@ html[lang="en"] .lEn {
   height: 1px;
   background: var(--text);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
 }
 

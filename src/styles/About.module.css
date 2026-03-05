@@ -51,6 +51,39 @@
   display: block;
 }
 
+
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.resumeBtn svg {
+  transition: transform 0.3s;
+}
+
+.resumeBtn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.resumeBtn:hover svg {
+  transform: translateY(-2px);
+}
+
 .langBadge {
   display: inline-flex;
   align-items: center;
@@ -84,10 +117,30 @@
   border: 1px solid var(--border);
   color: var(--muted);
   background: var(--surface);
+  transition: all 0.3s ease;
+}
+
+button.certBadge {
+  cursor: pointer;
+}
+
+button.certBadge:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-2px);
+  background: var(--bg2);
 }
 
 .aboutVisual {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.aboutActions {
+  width: 100%;
   display: flex;
   justify-content: center;
 }

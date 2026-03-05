@@ -1,4 +1,4 @@
-import type { SkillCategory, Project, TimelineItem, SocialLink } from '../types';
+import type { SkillCategory, Project, Lab, TimelineItem, SocialLink } from '../types';
 
 export const skillsData: SkillCategory[] = [
   {
@@ -120,6 +120,39 @@ export const projectsData: Project[] = [
     images: ['/projects/siscard/preview.png'],
     demoUrl: '#',
     githubUrl: 'https://github.com/jujomago/users_roles_mngmt'
+  }
+];
+
+export const labsData: Lab[] = [
+  {
+    id: 1,
+    title: { es: 'Buscador de Personajes Rick & Morty', en: 'Rick & Morty Character Finder' },
+    description: {
+      es: 'Práctica de consumo de APIs rest utilizando Fetch API y manejo de estado básico en React.',
+      en: 'Practice consuming rest APIs using Fetch API and basic state management in React.'
+    },
+    githubUrl: 'https://github.com/jujomago/rick-and-morty-finder',
+    tags: ['React', 'API Fetch', 'CSS']
+  },
+  {
+    id: 2,
+    title: { es: 'Generador de Sombras CSS', en: 'CSS Shadow Generator' },
+    description: {
+      es: 'Herramienta simple para generar box-shadows visualmente y copiar el código resultante.',
+      en: 'Simple tool to visually generate box-shadows and copy the resulting code.'
+    },
+    demoUrl: '#',
+    tags: ['JavaScript', 'DOM', 'CSS']
+  },
+  {
+    id: 3,
+    title: { es: 'Algoritmo Minimax - Tic Tac Toe', en: 'Minimax Algorithm - Tic Tac Toe' },
+    description: {
+      es: 'Implementación del algoritmo Minimax para un juego de tres en raya imbatible.',
+      en: 'Implementation of the Minimax algorithm for an unbeatable Tic Tac Toe game.'
+    },
+    githubUrl: '#',
+    tags: ['Algorithms', 'Logic', 'AI']
   }
 ];
 
