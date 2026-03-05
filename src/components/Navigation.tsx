@@ -35,6 +35,7 @@ const Navigation = () => {
     { href: "#skills", key: "nav.skills" },
     { href: "#projects", key: "nav.projects" },
     { href: "#timeline", key: "nav.experience" },
+    // { href: "#labs", key: "nav.labs" },
     { href: "#contact", key: "nav.contact" },
   ];
 
@@ -45,15 +46,21 @@ const Navigation = () => {
           JJMG<span>.</span>
         </a>
 
-<ul className={styles.navLinks}>
+        <ul className={styles.navLinks}>
           {navItems.map((item) => (
             <li key={item.key}>
-              <a href={item.href} onMouseEnter={playHoverSound}>{t(item.key)}</a>
+              <a
+                href={item.href}
+                onMouseEnter={playHoverSound}
+                className={item.key === 'nav.labs' ? styles.playgroundLink : ''}
+              >
+                {t(item.key)}
+              </a>
             </li>
           ))}
         </ul>
 
-<div className={styles.navControls}>
+        <div className={styles.navControls}>
           <button
             className={styles.langToggle}
             onClick={toggleLanguage}
@@ -122,13 +129,13 @@ const Navigation = () => {
             </span>
           </button>
 
-<button
+          <button
             className={styles.themeToggle}
             onClick={toggleTheme}
             onMouseEnter={playHoverSound}
             aria-label="Toggle theme"
           >
-<span className={`${styles.tIcon} ${styles.tMoon}`} aria-hidden="true">🌙</span>
+            <span className={`${styles.tIcon} ${styles.tMoon}`} aria-hidden="true">🌙</span>
             <span className={`${styles.tIcon} ${styles.tSun}`} aria-hidden="true">☀️</span>
           </button>
 
@@ -158,7 +165,7 @@ const Navigation = () => {
           <a
             key={item.key}
             href={item.href}
-            className="mobile-link"
+            className={`mobile-link ${item.key === 'nav.labs' ? styles.playgroundLinkMobile : ''}`}
             onClick={closeMobileMenu}
           >
             {t(item.key)}

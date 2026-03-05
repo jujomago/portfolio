@@ -1,0 +1,231 @@
+.labs {
+    padding: 6rem 0;
+    background: var(--bg2);
+    position: relative;
+    border-top: 1px solid var(--border);
+}
+
+.labsInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    transition: margin-bottom 0.4s ease;
+}
+
+.toggleContainer.expanded {
+    margin-bottom: 2rem;
+}
+
+.expandBtn {
+    background: transparent;
+    border: 1px dashed #ff4d4d;
+    color: #ff4d4d;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.expandBtn:hover {
+    background: rgba(255, 77, 77, 0.05);
+    border-style: solid;
+    transform: translateY(-2px);
+}
+
+.expandBtn svg {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expandBtn.active svg {
+    transform: rotate(180deg);
+}
+
+.expandableContent {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.expandableContent.active {
+    grid-template-rows: 1fr;
+}
+
+.contentInner {
+    overflow: hidden;
+}
+
+.labsHeader {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.labsHeader :global(.sectionTag) {
+    color: #ff4d4d;
+    border-color: rgba(255, 77, 77, 0.2);
+}
+
+.labsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 3rem;
+    /* Space for card shadows */
+    margin: 0 -1rem;
+    /* Negative margin to allow side shadows */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.labCard {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.labCard:hover {
+    border-color: #ff4d4d;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 77, 77, 0.1);
+}
+
+.labCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: #ff4d4d;
+    transition: height 0.3s ease;
+}
+
+.labCard:hover::before {
+    height: 100%;
+}
+
+.labTitle {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.labDesc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.labTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 77, 77, 0.08);
+    color: #ff4d4d;
+    border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+.labLinks {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #ff4d4d;
+}
+
+.link svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1170px) {
+    .labsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .labs {
+        padding: 7rem 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .labsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .labsInner {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Light Theme Enhancements */
+[data-theme="light"] .labs {
+    background: #ffffff;
+}
+
+[data-theme="light"] .labCard {
+    background: #f8f9fa;
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+}
+
+[data-theme="light"] .labCard:hover {
+    border-color: rgba(255, 77, 77, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    background: #ffffff;
+}
+
+[data-theme="light"] .tag {
+    background: rgba(255, 77, 77, 0.04);
+    border-color: rgba(255, 77, 77, 0.1);
+    color: #e03e3e;
+    /* Slightly darker red for better readability on light */
+}
+
+[data-theme="light"] .expandBtn:hover {
+    background: rgba(0, 0, 0, 0.02);
+}

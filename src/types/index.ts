@@ -18,6 +18,15 @@ export interface Project {
   githubUrl: string;
 }
 
+export interface Lab {
+  id: number;
+  title: { es: string; en: string };
+  description: { es: string; en: string };
+  githubUrl?: string;
+  demoUrl?: string;
+  tags: string[];
+}
+
 export interface TimelineItem {
   id: number;
   date: { es: string; en: string };
