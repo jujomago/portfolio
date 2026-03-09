@@ -24,6 +24,7 @@ export interface Lab {
   description: { es: string; en: string };
   githubUrl?: string;
   demoUrl?: string;
+  image?: string;
   tags: string[];
 }
 

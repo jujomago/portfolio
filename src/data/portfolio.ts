@@ -126,33 +126,39 @@ export const projectsData: Project[] = [
 export const labsData: Lab[] = [
   {
     id: 1,
-    title: { es: 'Buscador de Personajes Rick & Morty', en: 'Rick & Morty Character Finder' },
+    title: { es: 'Editor de Pixel Art', en: 'Pixel Art Editor' },
     description: {
-      es: 'Práctica de consumo de APIs rest utilizando Fetch API y manejo de estado básico en React.',
-      en: 'Practice consuming rest APIs using Fetch API and basic state management in React.'
+      es: 'Editor de arte pixel con matriz 20x20, sistema de colores numerados, selección múltiple, atajos de teclado, plantillas predefinidas y exportación a PNG/JSON. Construido con JavaScript vanilla, HTML5, CSS3 y Canvas API.',
+      en: 'Pixel art editor with 20x20 grid, numbered color system, multi-selection, keyboard shortcuts, predefined templates and PNG/JSON export. Built with vanilla JavaScript, HTML5, CSS3 and Canvas API.'
     },
-    githubUrl: 'https://github.com/jujomago/rick-and-morty-finder',
-    tags: ['React', 'API Fetch', 'CSS']
+    githubUrl: 'https://github.com/jujomago/pixelArtEditor',
+    image: 'https://raw.githubusercontent.com/jujomago/pixelArtEditor/main/screenshot.png',
+    demoUrl: 'https://jujomago.github.io/pixelArtEditor/',
+    tags: ['JavaScript ES6+', 'HTML5', 'CSS3', 'Canvas API']
   },
   {
     id: 2,
-    title: { es: 'Generador de Sombras CSS', en: 'CSS Shadow Generator' },
+    title: { es: 'Lista Pokémon Virtualizada', en: 'Pokemon Virtualized List' },
     description: {
-      es: 'Herramienta simple para generar box-shadows visualmente y copiar el código resultante.',
-      en: 'Simple tool to visually generate box-shadows and copy the resulting code.'
+      es: 'Aplicación React con TypeScript que implementa autenticación y visualización de datos de la PokéAPI con más de 2000 elementos. Usa virtualización para optimizar el rendimiento.',
+      en: 'React TypeScript application implementing authentication and PokéAPI data visualization with over 2000 elements. Uses virtualization for performance optimization.'
     },
-    demoUrl: '#',
-    tags: ['JavaScript', 'DOM', 'CSS']
+    githubUrl: 'https://github.com/jujomago/pokemon-lista',
+    image: '/labs/pokelista.png',
+    demoUrl: 'https://jujomago.github.io/pokemon-lista/',
+    tags: ['React 19', 'Next.js 15', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Virtualization']
   },
   {
     id: 3,
-    title: { es: 'Algoritmo Minimax - Tic Tac Toe', en: 'Minimax Algorithm - Tic Tac Toe' },
+    title: { es: 'Interfaz Mobile con Swipe Gestures', en: 'Mobile Interface with Swipe Gestures' },
     description: {
-      es: 'Implementación del algoritmo Minimax para un juego de tres en raya imbatible.',
-      en: 'Implementation of the Minimax algorithm for an unbeatable Tic Tac Toe game.'
+      es: 'Layout simple de tabs y páginas que funcionan con gestos de swipe. Interfaz móvil táctil con navegación intuitiva mediante gestos.',
+      en: 'Simple layout of tabs and pages that work with swipe gestures. Touch mobile interface with intuitive gesture navigation.'
     },
-    githubUrl: '#',
-    tags: ['Algorithms', 'Logic', 'AI']
+    githubUrl: 'https://github.com/jujomago/CustomMobileInterfaz',
+    demoUrl: 'https://jujomago.github.io/CustomMobileInterfaz/gestures_jt.html',
+    image: '/labs/mobile.png',
+    tags: ['Mobile UI', 'Touch Gestures', 'JavaScript', 'CSS3', 'HTML5']
   }
 ];
 
